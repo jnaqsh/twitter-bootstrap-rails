@@ -7,7 +7,7 @@
 // ----------
 
 .nav {
-  margin-left: 0;
+  margin-right: 0;
   margin-bottom: @baseLineHeight;
   list-style: none;
 }
@@ -22,8 +22,8 @@
 }
 
 // Redeclare pull classes because of specifity
-.nav > .pull-right {
-  float: right;
+.nav > .pull-left {
+  float: left;
 }
 
 // Nav headers (for dropdowns and lists)
@@ -54,7 +54,7 @@
 }
 .nav-list > li > a,
 .nav-list .nav-header {
-  margin-left:  -15px;
+  margin-left: -15px;
   margin-right: -15px;
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
@@ -69,7 +69,7 @@
 }
 .nav-list [class^="icon-"],
 .nav-list [class*=" icon-"] {
-  margin-right: 2px;
+  margin-left: 2px;
 }
 // Dividers (basically an hr) within the dropdown
 .nav-list .divider {
@@ -88,13 +88,13 @@
 }
 .nav-tabs > li,
 .nav-pills > li {
-  float: left;
+  float: right;
 }
 .nav-tabs > li > a,
 .nav-pills > li > a {
   padding-right: 12px;
   padding-left: 12px;
-  margin-right: 2px;
+  margin-left: 2px;
   line-height: 14px; // keeps the overall height an even number
 }
 
@@ -160,7 +160,7 @@
   float: none;
 }
 .nav-stacked > li > a {
-  margin-right: 0; // no need for the gap between nav items
+  margin-left: 0; // no need for the gap between nav items
 }
 
 // Tabs
@@ -326,7 +326,7 @@
 .tabs-left > .nav-tabs > li > a,
 .tabs-right > .nav-tabs > li > a {
   min-width: 74px;
-  margin-right: 0;
+  margin-left: 0;
   margin-bottom: 3px;
 }
 
