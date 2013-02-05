@@ -58,7 +58,7 @@ Then run `bundle install` from the command line:
 
     bundle install
 
-Then run the boostrap generator to add Bootstrap includes into your assets:
+Then run the bootstrap generator to add Bootstrap includes into your assets:
 
     rails generate bootstrap:install less
 
@@ -88,10 +88,16 @@ Usage:
     rails g bootstrap:layout [LAYOUT_NAME] [*fixed or fluid]
 
 
-Example:
+Example of a fixed layout:
 
 
     rails g bootstrap:layout application fixed
+
+
+Example of a responsive layout:
+
+
+    rails g bootstrap:layout application fluid
 
 
 Themed (generates Twitter Bootstrap compatible scaffold views.) - (Haml and Slim supported)
@@ -158,6 +164,17 @@ styles inheriting Bootstrap's mixins, you can do so inside bootstrap_and_overrid
 @linkColor: #ff0000;
 ```
 
+### Icons
+
+By default, this gem overrides standard Bootstraps's Glyphicons with Font Awesome (http://fortawesome.github.com/Font-Awesome/).
+If you would like to restore the default Glyphicons, inside the _bootstrap_and_overrides.css.less_ remove the FontAwesome declaration and uncomment the line:
+
+```css
+// Font Awesome
+// @import "fontawesome";
+// Glyphicons
+@import "twitter/bootstrap/sprites.less";
+```
 
 ## Using Javascripts
 
@@ -166,7 +183,7 @@ You have to require Bootstrap JS (bootstrap.js) in your application.js
 ```js
 //= require twitter/bootstrap
 
-$(document).ready(function(){
+$(function(){
   /* Your javascripts goes here... */
 });
 ```
@@ -201,9 +218,12 @@ jQuery ->
 ## Using Helpers
 
 ### Flash helper
-Add flash helper <%= bootstrap_flash %> to your layout (built-in with layout generator)
+Add flash helper `<%= bootstrap_flash %>` to your layout (built-in with layout generator)
 
 ### Breadcrumbs Helpers
+
+Add breadcrumbs helper `<%= render_breadcrumbs %>` to your layout.
+
 ```ruby
 class ApplicationController
   add_breadcrumb :index, :root_path
@@ -211,7 +231,7 @@ end
 ```
 
 ```ruby
-class ExapmlesController < ApplicationController
+class ExamplesController < ApplicationController
   add_breadcrumb :index, :examples_path
 
   def index
@@ -236,8 +256,6 @@ en:
       index: "Examples"
       show: "Example"
 ```
-
-Add breadcrumbs helper <%= render_breadcrumbs %> to your layout
 
 ## Changelog
 <ul>
@@ -283,6 +301,7 @@ Add breadcrumbs helper <%= render_breadcrumbs %> to your layout
   <li>Added static stylesheets support</li>
   <li>Released gem v.2.1.8 and updated to Twitter Bootstrap 2.2.2</li>
   <li>Released gem v.2.1.9</li>
+  <li>Released gem v.2.2.0 (Font Awesome 3)</li>
 </ul>
 
 
